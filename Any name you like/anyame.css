@@ -1,0 +1,334 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* ---------- 1. PAGE BASICS ---------- */
+/* Set the body font, remove the default margin, set the page
+   background colour and the main text colour. */
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #FFF3E2;
+    color: #3B2314;
+    line-height: 1.6;
+}
+
+
+/* ---------- 2. NAVBAR (flexbox — you've done this) ---------- */
+/* .navbar: flex container, logo left + links right, vertically centred.
+   Give it some padding and a background colour. */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #3B2314;
+    color: white;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 45px;
+    color: #F2C14E;
+    font-weight: bold;
+}
+
+/* .nav-links: also a flex container so the list runs across.
+   Remove the bullets, remove the default padding, add a gap. */
+
+.nav-links {
+    display: flex;
+    gap: 38px;
+    list-style: none;
+    align-items: center;
+}
+
+/* The <a> tags inside the nav: remove the underline, set a colour. */
+
+.nav-links a {
+   color: #FFF3E2;
+   transition: color 0.2s;
+   text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: #F2C14E;
+}
+
+/* .nav-button: this one should look like a button, not a link.
+   Background colour, padding, rounded corners.
+
+   NOTE : the button is ALSO an <a> inside .nav-links, so the
+   rules above already apply to it. If your colour here seems to
+   get ignored, that's why — write `.nav-links .nav-button`
+   instead of just `.nav-button` and it'll win. */
+
+.nav-links .nav-button {
+   background-color: #9E2B4E;
+   color: #FFFDF8;
+   transition: background-color 0.2s, color 0.2s;
+   text-decoration: none;
+   margin-left: 20px;
+   padding: 10px 22px;
+   border-radius: 20px;
+}
+
+.nav-links .nav-button:hover {
+  background-color: #5e0101;
+  color: rgb(126, 115, 115);
+}
+
+
+/* ---------- 3. HERO ---------- */
+/* Padding, centred text.
+   Tip: try `max-width` + `margin: 0 auto` on .hero-text so the
+   sentence doesn't stretch across the whole screen. */
+
+.hero {
+  padding: 80px 20px;
+  background-position: center;
+  text-align: center;
+  background-color: #F2C14E;
+}
+
+.hero-eyebrow {
+  color: #7A4A22;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  font-size: 48px;
+  color: #3B2314;
+  margin-bottom: 15px;
+}
+
+.hero-text {
+  max-width: 600px;
+  margin: 0 auto 25px auto;
+  font-size: 18px;
+  color: #3B2314;
+}
+
+.hero-button {
+  background-color: #3B2314;
+  color: #FFF3E2;
+  transition: background-color 0.2s;
+  display: inline-block;
+  padding: 12px 28px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+.hero-button:hover {
+  background-color: #9E2B4E;
+}
+
+
+/* ---------- 4. PIE CARDS (flexbox again) ---------- */
+/* .pie-row is the flex container. The three .pie-card boxes are
+   the flex items — make them sit side by side with a gap. */
+
+.pies {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #3B2314;
+}
+
+.pie-row {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* .pie-card: background, padding, rounded corners, maybe a shadow.
+   Give them a width so all three match. */
+
+.pie-card {
+  background-color: #FFFDF8;
+  box-shadow: 0 3px 10px rgba(59, 35, 20, 0.15);
+  transition: box-shadow 0.2s;
+  flex: 1;
+  min-width: 260px;
+  max-width: 250px;
+  padding: 30px 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.pie-card:hover {
+  box-shadow: 0 8px 20px rgba(59, 35, 20, 0.25);
+}
+
+.pie-icon {
+  font-size: 44px;
+  margin-bottom: 15px;
+}
+
+.pie-name {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #3B2314;
+}
+
+.pie-description {
+  margin-bottom: 15px;
+  color: #555;
+  font-size:15px;
+}
+
+.pie-price {
+  color: #9E2B4E;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.pie-button {
+  color: #3B2314;
+  border: 2px solid #3B2314;
+  transition: background-color 0.2s, color 0.2s;
+  display: inline-block;
+  padding: 8px 20px;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.pie-button:hover {
+  background-color: #3B2314;
+  color: #FFF3E2;
+}
+
+
+/* ---------- 5. WHY US ---------- */
+/* .promise is a flex container holding three .promise-item boxes. */
+
+.promise {
+  background-color: #FFFDF8;
+  display: flex;
+  gap: 38px;
+  justify-content: space-around;
+  padding: 60px 40px;
+  flex-wrap: wrap;
+}
+
+.promise-item {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+}
+
+.promise-title {
+  color: #9E2B4E;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.promise-text {
+  color: #3B2314;
+  font-size: 15px;
+}
+
+
+/* ---------- 6. FOOTER ---------- */
+/* .footer-inner is a flex row: address on the left, links on the right. */
+
+.site-footer {
+  background-color: #3B2314;
+  color: #FFF3E2;
+  padding: 40px 20px 20px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 12000px;
+  margin: 0 auto 30px auto;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-heading {
+  color: #F2C14E;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.footer-text {
+  font-size: 14px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.footer-links a {
+  color: #FFF3E2;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #F2C14E;
+}
+
+.footer-note {
+  color: #B79A85;
+  text-align: center;
+  font-size: 14px;
+  border-top: 1px solid rgba(255,255,255, 0.1);
+  padding-top: 20px;
+}
+
+
+/* ---------- 7. BONUS: MOBILE ---------- */
+/* Below 700px, stack the rows into columns instead of leaving
+   them squashed. Uncomment and fill in. */
+
+
+@media (max-width: 700px) {
+  .navbar,
+  .footer-inner{
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .nav-links{
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-limks .nav-botton {
+    margin-left: 0;
+  }
+
+  .pie-row,
+  .promise {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+}
